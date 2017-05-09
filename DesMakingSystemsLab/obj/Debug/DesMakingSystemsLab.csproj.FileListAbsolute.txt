@@ -1,9 +1,0 @@
-D:\LabSharp\DesMakingSystemsLab\DesMakingSystemsLab\bin\Debug\DesMakingSystemsLab.exe.config
-D:\LabSharp\DesMakingSystemsLab\DesMakingSystemsLab\bin\Debug\DesMakingSystemsLab.exe
-D:\LabSharp\DesMakingSystemsLab\DesMakingSystemsLab\bin\Debug\DesMakingSystemsLab.pdb
-D:\LabSharp\DesMakingSystemsLab\DesMakingSystemsLab\obj\Debug\DesMakingSystemsLab.csprojResolveAssemblyReference.cache
-D:\LabSharp\DesMakingSystemsLab\DesMakingSystemsLab\obj\Debug\DesMakingSystemsLab.Form1.resources
-D:\LabSharp\DesMakingSystemsLab\DesMakingSystemsLab\obj\Debug\DesMakingSystemsLab.Properties.Resources.resources
-D:\LabSharp\DesMakingSystemsLab\DesMakingSystemsLab\obj\Debug\DesMakingSystemsLab.csproj.GenerateResource.Cache
-D:\LabSharp\DesMakingSystemsLab\DesMakingSystemsLab\obj\Debug\DesMakingSystemsLab.exe
-D:\LabSharp\DesMakingSystemsLab\DesMakingSystemsLab\obj\Debug\DesMakingSystemsLab.pdb
