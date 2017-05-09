@@ -16,6 +16,8 @@ namespace DesMakingSystemsLab
         public double coord_of_min;
         public double min_value;
         public double stop_param;
+        public double m;
+        public double r;
         public List<double> serial_of_trials;
         public List<double> list_of_interval_characteristics;
         public Function func;
@@ -56,6 +58,9 @@ namespace DesMakingSystemsLab
             }
         }
 
+        public virtual void M_and_m_Calc()
+        { }
+
         public virtual void NextTrialPoint()
         {
             double next_point = 0.5 * (serial_of_trials[num_of_max_interval_characteristics] + serial_of_trials[num_of_max_interval_characteristics - 1]);
@@ -67,7 +72,7 @@ namespace DesMakingSystemsLab
         {
             serial_of_trials.Sort();
         }
-        public virtual void Init(Function _func, double _a_border, double _b_border,RadioButton _rad, double _stop_param)
+        public virtual void Init(Function _func, double _a_border, double _b_border,RadioButton _rad, double _stop_param,double _r)
         {
             func = _func;
             a_border = _a_border;
@@ -80,9 +85,10 @@ namespace DesMakingSystemsLab
             rad = _rad;
             stop_param = _stop_param;
             list_of_interval_characteristics.Add(-1);
+            r = 1;
         }
 
-        public void Start()
+        public virtual void Start()
         {
             serial_of_trials.Add(a_border);
             serial_of_trials.Add(b_border);
@@ -93,6 +99,11 @@ namespace DesMakingSystemsLab
                 Sort();
             }
 
+        }
+
+        public double GetFuncValue(double x)
+        {
+            return func.GetFunctionValue(x);
         }
 
     }

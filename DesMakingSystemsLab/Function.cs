@@ -23,7 +23,8 @@ namespace DesMakingSystemsLab
 
         public double GetFunctionValue(double x)
         {
-            return A * Math.Sin(C * x) + B * Math.Cos(D * x);
+            double res = (A * Math.Sin(C * x)) + (B * Math.Cos(D * x));
+            return res;
         }
     }
 }
