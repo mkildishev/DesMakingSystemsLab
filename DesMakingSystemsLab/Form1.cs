@@ -71,22 +71,65 @@ namespace DesMakingSystemsLab
             func.SetFunctionParams(a, c, b, d);
         }
 
+        void PrintResult(ComputationalMethod meth, Function func)
+        {
+            richTextBox1.Text = "Количество испытаний: ";
+            richTextBox1.Text += Convert.ToString(meth.count_of_trials);
+            richTextBox1.Text += "\n";
+            richTextBox1.Text += "Количество измерений функции: ";
+            richTextBox1.Text += Convert.ToString(meth.count_of_measurement_function);
+            richTextBox1.Text += "\n";
+            richTextBox1.Text += "Координата минимального значения функции: ";
+            richTextBox1.Text += Convert.ToString(meth.serial_of_trials[meth.num_of_max_interval_characteristics]);
+            richTextBox1.Text += "\n";
+            richTextBox1.Text += "Минимальное значение функции: ";
+            richTextBox1.Text += Convert.ToString(func.GetFunctionValue(meth.serial_of_trials[meth.num_of_max_interval_characteristics]));
+            richTextBox1.Text += "\n";
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Function func = new Function();
-            ComputationalMethod mesh = new ComputationalMethod();
-
+            ComputationalMethod meth;
             InitFunction(func);
             if (IsCorrect())
                 DrawFunction(func);
             double a_border = Convert.ToDouble(textBox8.Text);
             double b_border = Convert.ToDouble(textBox9.Text);
-            double stop = Convert.ToDouble(textBox10.Text);
-            mesh.Init(func, a_border, b_border, radioButton4, stop);
-            mesh.Start();
-            DrawPoints(mesh.serial_of_trials, mesh.num_of_max_interval_characteristics);
+            double stop;
+            if (radioButton4.Checked)
+                stop = Convert.ToDouble(textBox10.Text);
+            else
+                stop = Convert.ToDouble(textBox11.Text);
+            double r = Convert.ToDouble(textBox5.Text);
+            if (radioButton1.Checked)
+            {
+                meth = new ComputationalMethod();
+                meth.Init(func, a_border, b_border, radioButton4, stop, r);
+                meth.Start();
+                DrawPoints(meth.serial_of_trials, meth.num_of_max_interval_characteristics);
+                PrintResult(meth,func);
+            }
+            else if (radioButton2.Checked)
+            {
+                meth = new PiyavskyMethod();
+                meth.Init(func, a_border, b_border, radioButton4, stop, r);
+                meth.Start();
+                DrawPoints(meth.serial_of_trials, meth.num_of_max_interval_characteristics);
+                PrintResult(meth,func);
+            }
+            else if(radioButton3.Checked)
+            {
+                meth = new StronginMethod();
+                meth.Init(func, a_border, b_border, radioButton4, stop, r);
+                meth.Start();
+                DrawPoints(meth.serial_of_trials, meth.num_of_max_interval_characteristics);
+                PrintResult(meth,func);
+            }
+            
         }
+
+     
     }
     
 }

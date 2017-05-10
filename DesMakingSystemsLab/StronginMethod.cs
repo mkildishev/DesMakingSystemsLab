@@ -19,6 +19,7 @@ namespace DesMakingSystemsLab
                 double M = Math.Abs(dz / dx);
                 if (M > max_M)
                     max_M = M;
+                count_of_measurement_function += 2;
             }
             if (max_M == 0)
                 m = 1;
@@ -64,6 +65,7 @@ namespace DesMakingSystemsLab
             double next_point = (0.5 * p1) - (p2 / (2 * m));
             serial_of_trials.Add(next_point);
             count_of_trials++;
+            count_of_measurement_function += 2;
         }
 
         public override void R_Calc()
@@ -72,9 +74,11 @@ namespace DesMakingSystemsLab
             double maxR = -9999999999;
             for (int i = 1; i < count_of_trials; i++)
             {
-                double dz = (base.GetFuncValue(serial_of_trials[i]) + base.GetFuncValue(serial_of_trials[i - 1]));
+                double dpz = (base.GetFuncValue(serial_of_trials[i]) + base.GetFuncValue(serial_of_trials[i - 1]));
+                double dz = (base.GetFuncValue(serial_of_trials[i]) - base.GetFuncValue(serial_of_trials[i - 1]));
                 double dx = (serial_of_trials[i] - serial_of_trials[i - 1]);
-                double R = 0.5 * m * dx - dz * 0.5;
+                double R = m * dx + (dz * dz / (m * dx)) - 2 * dpz;
+                count_of_measurement_function += 2;
                 list_of_interval_characteristics.Add(R);
                 if (R > maxR)
                 {
