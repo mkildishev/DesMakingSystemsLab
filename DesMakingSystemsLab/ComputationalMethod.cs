@@ -63,7 +63,7 @@ namespace DesMakingSystemsLab
 
         public virtual void NextTrialPoint()
         {
-            double next_point = 0.5 * (serial_of_trials[num_of_max_interval_characteristics] + serial_of_trials[num_of_max_interval_characteristics - 1]);
+            double next_point = a_border + (b_border - a_border);
             serial_of_trials.Add(next_point);
             count_of_trials++;
         }
@@ -85,18 +85,33 @@ namespace DesMakingSystemsLab
             rad = _rad;
             stop_param = _stop_param;
             list_of_interval_characteristics.Add(-1);
-            r = 1;
+            r = _r;
         }
 
         public virtual void Start()
         {
             serial_of_trials.Add(a_border);
             serial_of_trials.Add(b_border);
-            while(!NeedStop(rad,stop_param))
+            for (int i = 1; i < r; i++)
+            { 
+                serial_of_trials.Add(a_border + i * (b_border - a_border) / (r + 1));
+                count_of_trials++;
+            }
+            List<double> funcValues = new List<double>();
+            for (int i = 0; i < r; i++)
             {
-                R_Calc(); // Ну не просто так же, мы вычисляем R.
-                NextTrialPoint();
-                Sort();
+                funcValues.Add(func.GetFunctionValue(serial_of_trials[i]));
+                count_of_measurement_function++;
+            }
+            double min_F = funcValues[0];
+            for (int i = 1; i < r; i++)
+            {
+                if (funcValues[i] < min_F)
+                {
+                     min_F = funcValues[i];
+                    num_of_max_interval_characteristics = i;
+                }
+                   
             }
 
         }

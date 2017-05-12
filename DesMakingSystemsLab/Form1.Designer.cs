@@ -43,10 +43,8 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -151,10 +149,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radioButton3);
@@ -175,19 +171,10 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Число отрезков:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(194, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Надёжность(r):";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(194, 42);
+            this.label1.Location = new System.Drawing.Point(194, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 12;
@@ -200,19 +187,13 @@
             this.textBox7.Size = new System.Drawing.Size(51, 20);
             this.textBox7.TabIndex = 11;
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(280, 60);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(51, 20);
-            this.textBox6.TabIndex = 10;
-            // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(280, 37);
+            this.textBox5.Location = new System.Drawing.Point(280, 52);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(51, 20);
             this.textBox5.TabIndex = 9;
+            this.textBox5.Text = "2";
             // 
             // groupBox2
             // 
@@ -442,10 +423,8 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox9;

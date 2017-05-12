@@ -105,6 +105,7 @@ namespace DesMakingSystemsLab
             if (radioButton1.Checked)
             {
                 meth = new ComputationalMethod();
+                r = Convert.ToDouble(textBox7.Text);
                 meth.Init(func, a_border, b_border, radioButton4, stop, r);
                 meth.Start();
                 DrawPoints(meth.serial_of_trials, meth.num_of_max_interval_characteristics);
